@@ -17,6 +17,11 @@ public class EmpWageComputation {
 	static int totalWages=0; //Stores total wages in a month
 	static int totalWorkingHrs=0; //Stores total working hours of an employee in month
 	
+	//Computes DailWage of an Employee
+	public static int ComputeWage(int hours) {
+				return hours*WAGE_PER_HOUR;
+	} 
+	
 	public static void main(String[] args) {
 		int attendence; //Stores value of employee attendance 
 		
@@ -39,13 +44,13 @@ public class EmpWageComputation {
 			default:	System.out.println("Employee is Absent");
 		
 			}
-			dailyWage=workHours*WAGE_PER_HOUR;
+			dailyWage=ComputeWage(workHours); //Calculates daily wages
 			totalWorkingHrs+=workHours; //Increments by workHours
 			System.out.println("Daily Wage of an Employee on Day "+totalWorkingDays+" is "+dailyWage);
 			totalWorkingDays++;
 		}
 		
-		totalWages=totalWorkingHrs*WAGE_PER_HOUR; //Calculates total wages in month
+		totalWages=ComputeWage(totalWorkingHrs); //Calculates total wages in month
 		System.out.println("Total Wages in a month = "+totalWages);
 
 	}
