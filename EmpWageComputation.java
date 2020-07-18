@@ -5,25 +5,23 @@
  * Execution Command: java package_name EmpWageComputation
  */
 public class EmpWageComputation {
-	
 
-	static int totalWages=0; //Stores total wages in a month
+	static int[] totalWages; //Stores total wages in a month
 	
 	public static void main(String[] args) {
 		
+		//Creates array with type CompanyEmpWage 
+		CompanyEmpWage[] emp = new CompanyEmpWage[2];
+		
+		// Instantiate CompanyEmpWage object and stores it to arrays 
+		emp[0]=new CompanyEmpWage(20, 20, 200, "Sharp");
+		emp[1]=new CompanyEmpWage(50, 25, 200, "Sony");
+		
+		
 		// Instantiate EmpWageBulider object
-		EmpWageBulider emp1 = new EmpWageBulider(20, 20, 200, "Sharp");
-		EmpWageBulider emp2 = new EmpWageBulider(15, 30, 200, "Sony");
+		EmpWageBulider emp1 = new EmpWageBulider(emp);
 		
-		totalWages=emp1.computeWage(); //calls computeWage() method from EmpWageBulider class and assigns return value to totalWages 
-		System.out.println("Total Wages for an Employee in "+emp1+" is "+totalWages);
-		System.out.println();
-		
-		totalWages=emp2.computeWage();
-		System.out.println();
-		System.out.println("Total Wages for an Employee in "+emp2+" is "+totalWages);
-		
-		
+		totalWages=emp1.computeWage(); //calls computeWage() method from EmpWageBulider class 
 		
 	}
 }
