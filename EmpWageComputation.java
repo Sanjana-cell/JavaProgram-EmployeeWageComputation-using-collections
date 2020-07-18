@@ -6,17 +6,8 @@
  */
 public class EmpWageComputation {
 	
-	EmpWageBulider emp = new EmpWageBulider(20,20,100,"Airtel");
-	
-	
-	final static int FULL_TIME=2; //Assigned full time with 2
-	final static int PART_TIME=1; //Assigned part time with 1
-	static int dailyWage=0;	 //Stores dailyWage of employee
-	static int workHours=0;  //Stores work hour of employee
-	static int totalWorkingDays=1; //Stores total working days of an employee in month
+
 	static int totalWages=0; //Stores total wages in a month
-	static int totalWorkingHrs=0; //Stores total working hours of an employee in month
-	static String company=""; //Stores Company name
 	
 	public static void main(String[] args) {
 		
