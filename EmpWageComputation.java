@@ -11,7 +11,7 @@ public class EmpWageComputation {
 	static int workHours=0;  //Stores work hour of employee
 	
 	public static void main(String[] args) {
-		int attendence=(int)(Math.random()*2); // Generates 0 or 1 using random() and stores the value
+		int attendence=(int)(Math.random()*3); // Generates 0,1 or 2 using random() and stores the value
 		
 		//Checks if Employee is present or absent
 		if(attendence==1) {
@@ -19,8 +19,15 @@ public class EmpWageComputation {
 			workHours=8;
 			dailyWage=workHours*WAGE_PER_HOUR;
 		}
+		else if(attendence==1) {
+			System.out.println("Employee is Present for Part Time");
+			workHours=4;
+			dailyWage=workHours*WAGE_PER_HOUR;
+		}
 		else
 			System.out.println("Employee is Absent");
+		
+		System.out.println("Daily Wage of an Employee "+dailyWage);
 
 	}
 
