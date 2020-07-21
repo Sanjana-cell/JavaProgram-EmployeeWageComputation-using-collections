@@ -32,12 +32,12 @@ public class EmpWageBulider {
 					according to work time*/
 				switch(attendence) {
 					case FULL_TIME: workHours=8;
-									break;
+							break;
 						
 					case PART_TIME: workHours=4;
-									break;
+							break;
 						
-					default:		workHours=0;
+					default:	workHours=0;
 		
 				}
 				totalWorkingHrs+=workHours; //Increments by workHours
