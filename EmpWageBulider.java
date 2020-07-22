@@ -12,7 +12,7 @@ public class EmpWageBulider {
 	int totalWorkingHrs=0; //Stores total working hours of an employee in month
     
 	String company=""; //Stores Company name
-	ArrayList<CompanyEmpWage>  info; //Array declaration 
+	ArrayList<CompanyEmpWage>  info; //ArrayList declaration 
     int totalWages[] = new int[2];
     
     
