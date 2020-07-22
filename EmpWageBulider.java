@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class EmpWageBulider {
@@ -7,25 +8,27 @@ public class EmpWageBulider {
 	
 	int dailyWage=0;	 //Stores dailyWage of employee
 	int workHours=0;  //Stores work hour of employee
-	int totalWorkingDays=1; //Stores total working days of an employee in month
+	int totalWorkingDays=0; //Stores total working days of an employee in month
 	int totalWorkingHrs=0; //Stores total working hours of an employee in month
     
 	String company=""; //Stores Company name
-    CompanyEmpWage[] info; //Array declaration 
+	ArrayList<CompanyEmpWage>  info; //Array declaration 
     int totalWages[] = new int[2];
     
     
-	public EmpWageBulider(CompanyEmpWage[] info) {
+	public EmpWageBulider(ArrayList<CompanyEmpWage> info) {
 		this.info=info;
 		
 	}
-	
+
+
 	//Calculates total Wages of an employee of different companies for totalWorking days and totalWorking hours
 	public int[] computeWage() {
-		for(int i=0; i<2; i++) {
-			System.out.println(info[i].company + " Employee Daily Wages");
+		int i=0;
+		for(CompanyEmpWage info: info) {
+			System.out.println(info.company + " Employee Daily Wages");
 			//Continues till totalWorkings days reached maximum working days
-			while(totalWorkingDays<=info[i].max_working_days || totalWorkingHrs<=info[i].max_working_hours) {
+			while(totalWorkingDays<=info.max_working_days || totalWorkingHrs<=info.max_working_hours) {
 				int attendence = (int)(Math.random()*3); // Generates 0 or 1 using random() and stores the value
 		
 				/*Checks if Employee is working full time,part time or absent and store work hours and calculate daily wage of employee
@@ -41,13 +44,15 @@ public class EmpWageBulider {
 		
 				}
 				totalWorkingHrs+=workHours; //Increments by workHours
-				dailyWage=workHours*info[i].wage_per_hour;
+				dailyWage=workHours*info.wage_per_hour;
 				System.out.println("Daily Wage of an Employee on Day "+totalWorkingDays+" is "+dailyWage);
 				totalWorkingDays++;
 			}
-			totalWages[i]=totalWorkingHrs*info[i].wage_per_hour;; //Calculates and returns total wages in month
+			
+			totalWages[i]=totalWorkingHrs*info.wage_per_hour;; //Calculates and returns total wages in month
 			System.out.println();
-			System.out.println("Total Wages in "+ info[i].company + " is "+ totalWages[i]);
+			System.out.println("Total Wages in "+ info.company + " is "+ totalWages[i]);
+			i++;
 			System.out.println();
 			totalWorkingDays=0;
 			totalWorkingHrs=0;

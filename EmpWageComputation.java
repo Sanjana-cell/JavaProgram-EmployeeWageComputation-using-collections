@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * @author Sanjana K R 
  * Created on: 18-Jul-2020
@@ -10,14 +12,11 @@ public class EmpWageComputation {
 	
 	public static void main(String[] args) {
 		
-		//Creates array with type CompanyEmpWage 
-		CompanyEmpWage[] emp = new CompanyEmpWage[2];
+		ArrayList<CompanyEmpWage> emp = new ArrayList<CompanyEmpWage>();
 		
-		// Instantiate CompanyEmpWage object and stores it to arrays 
-		emp[0]=new CompanyEmpWage(20, 20, 200, "Sharp");
-		emp[1]=new CompanyEmpWage(50, 25, 200, "Sony");
-		
-		
+		emp.add(new CompanyEmpWage(8, 2, 2, "Sharp") );
+		emp.add(new CompanyEmpWage(20, 20, 100, "Sony"));
+			
 		// Instantiate EmpWageBulider object
 		EmpWageBulider emp1 = new EmpWageBulider(emp);
 		
